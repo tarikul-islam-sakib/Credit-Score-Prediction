@@ -5,9 +5,8 @@ import pandas as pd
 import warnings
 warnings.filterwarnings("ignore")
 
-import joblib
-
-model = joblib.load('model.pkl')
+import os, joblib
+model = joblib.load(os.path.join(os.path.dirname(__file__), "model.pkl"))
 
 # Load scaler and feature selector
 with open('std.pkl', 'rb') as f:
